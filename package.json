@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node src",
+    "dev": "nodemon --watch src src/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/InsoooooooooJANG/ttodongHouse-backend/issues"
   },
-  "homepage": "https://github.com/InsoooooooooJANG/ttodongHouse-backend#readme"
+  "homepage": "https://github.com/InsoooooooooJANG/ttodongHouse-backend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
