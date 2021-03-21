@@ -55,10 +55,19 @@ app.post('/api/createNotice', noticeApi.createNotice);
 
 var qnaLabelApi = require('./api/QnA/label');
 app.get('/api/getQnaLabelList', qnaLabelApi.getLabelList);
-app.put('/api/createQnaLabel', qnaLabelApi.createQnaLabel);
-app.post('/api/deleteQnaLabel', qnaLabelApi.deleteQnaLabel);
+app.post('/api/createQnaLabel', qnaLabelApi.createQnaLabel);
+app.delete('/api/deleteQnaLabel', qnaLabelApi.deleteQnaLabel);
 
 var photoLabelApi = require('./api/Photo/label');
+app.get('/api/getLabelList', photoLabelApi.getLabelList);
+app.put('/api/unmapLabelToPhoto', photoLabelApi.unmapLabelToPhoto);
+app.delete('/api/deleteLabel', photoLabelApi.deleteLabel);
+app.post('/api/createLabel', photoLabelApi.createLabel);
+
+var attachFileApi = require('./api/QnA/file');
+app.get('./api/getFileList', attachFileApi.getFileList);
+app.post('./api/createAttachFile', attachFileApi.createAttachFile);
+app.delete('./api/deleteAttachFile', attachFileApi.deleteAttachFile);
 
 app.listen(3000, ()=>{
     console.log('example starts');
