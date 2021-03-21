@@ -24,7 +24,41 @@ app.put('/api/updateUserInfo', userApi.updateUser);
 app.delete('/api/deleteUser', userApi.deleteUser);
 
 var reservApi = require('./api/Reservation/reservation');
+app.get('/api/getReservList', reservApi.getList);
+app.get('/api/getMyReserv', reservApi.getMyReserv);
+app.post('/api/createReserv', reservApi.createReserv);
+app.put('/api/updateReserv', reservApi.updateReserv);
+app.delete('/api/deleteReserv', reservApi.deleteReserv);
 
+var photoApi = require('./api/Photo/photo');
+app.get('/api/getPhotoList', photoApi.getList);
+app.post('/api/createPhoto', photoApi.createPhoto);
+app.put('/api/updatePhoto', photoApi.updatePhoto);
+app.delete('/api/deletePhoto', photoApi.deletePhoto);
+
+var qnaApi = require('./api/QnA/qna');
+app.get('/api/getQnaList',qnaApi.getList);
+app.get('/api/getQnaDetail', qnaApi.getQnaDetail);
+app.post('/api/createQna', qnaApi.createQna);
+app.put('/api/updateQna', qnaApi.updateQna);
+app.delete('/api/deleteQna', qnaApi.deleteQna);
+
+var qnaCommApi = require('./api/QnA/comment');
+app.get('/api/getCommentList', qnaCommApi.getCommentList);
+app.post('/api/createQnaComment', qnaCommApi.createQnaComment);
+app.delete('/api/deleteQna', qnaCommApi.deleteQna);
+
+var noticeApi = require('./api/Notice/Notice');
+app.get('/api/getNoticeList', noticeApi.getList);
+app.put('/api/updateNotice', noticeApi.updateNotice);
+app.post('/api/createNotice', noticeApi.createNotice);
+
+var qnaLabelApi = require('./api/QnA/label');
+app.get('/api/getQnaLabelList', qnaLabelApi.getLabelList);
+app.put('/api/createQnaLabel', qnaLabelApi.createQnaLabel);
+app.post('/api/deleteQnaLabel', qnaLabelApi.deleteQnaLabel);
+
+var photoLabelApi = require('./api/Photo/label');
 
 app.listen(3000, ()=>{
     console.log('example starts');
